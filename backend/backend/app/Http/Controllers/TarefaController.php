@@ -60,15 +60,13 @@ class TarefaController extends Controller
     public function edit($id){
 
         $tarefa = Tarefa::where('id',$id) ->get();
-
-
         return response()->json( $tarefa);
     }
 
 
     public function update(Request $request){
 
-        
+
         if($request->nome == 'undefined'){
             $msg = [
                 'msg'=>'Nome não pode ser vazio',

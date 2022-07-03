@@ -55,8 +55,8 @@
 </template>
 
 <script>
-
- import api from '@/plugins/api';
+    import moment from 'moment';
+    import api from '@/plugins/api';
     export default {
        name: 'Adicionar',
         data(){
@@ -80,6 +80,7 @@
                 .get('/editar/'+ this.$route.params.id)
                 .then(response => {    
                     this.tarefa = response.data[0];
+                    this.tarefa.updated_at = moment(String(this.tarefa.updated_at)).format('D/M/Y');
                 })
                 .catch(error => console.log(error))
             },
@@ -110,6 +111,7 @@
                 
               
             },
+
         }
         
     }

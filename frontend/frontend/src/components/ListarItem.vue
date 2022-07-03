@@ -1,9 +1,9 @@
 <template>
 
     <div>
-        <button>
-            <RouterLink to="/criar">Adicionar Tarefas</RouterLink>
-        </button>
+        
+            <RouterLink class="btn btn-outline-success btn-sm" to="/criar">Adicionar Tarefas</RouterLink>
+        
         <table class="table">
             <thead>
                 <tr>
@@ -21,9 +21,9 @@
                 <td>{{item.nome}}</td>
                 <td>{{item.descricao}}</td>
                 <td>{{item.status}}</td>
-                <td>
+                <td >
                     <button class="btn btn-danger btn-sm" @click.prevent="deletarTarefa(item.id)">Deletar</button>   
-                    <RouterLink class="btn btn-success btn-sm" :to="{name:'editar',params:{id:item.id}}">Editar</RouterLink>
+                    <RouterLink class="btn btn-success ms-1 btn-sm" :to="{name:'editar',params:{id:item.id}}">Editar</RouterLink>
                     
     
                 </td>
@@ -74,7 +74,7 @@
                    if(response.data.status == true){
                         setTimeout(() => {
                                 this.$router.go();
-                            }, 3000);
+                            }, 2000);
                         
                    }   
                 })

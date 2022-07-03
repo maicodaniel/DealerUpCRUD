@@ -1,28 +1,23 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
+import Header from "@/components/Header.vue";
 import { def } from "@vue/shared";
 </script>
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+    
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Listar</RouterLink>
-        <RouterLink to="/about">Adicionar </RouterLink>
-        <RouterLink to="/listar">Listar Tarefas</RouterLink>
-        <RouterLink to="/criar">Adicionar Tarefas</RouterLink>
-      </nav>
+      <div class="container">
+        <Header msg="You did it!" />
+        <nav>
+          
+          <RouterLink class="btn btn-outline-primary my-4 btn-sm" to="/listar">Listar Tarefas</RouterLink>
+         
+        </nav>
+      </div>
+      
     </div>
   </header>
 
